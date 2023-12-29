@@ -1,0 +1,66 @@
+[core]
+	editor = vim
+
+[user]
+	name = Laker Turner
+	email = la@laker.gay
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOAbu30yEWXnSFjscc94wwa+Qj7OQa9bgP9SYcDzjUY/
+
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgsign = true
+	
+[push] 
+	autoSetupRemote = true
+		
+[color] # not even sure if this works tbh
+	ui = true
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	status = auto
+
+[alias]
+	a = add
+	co = checkout
+	st = status
+	c = 'commit'
+	unstage = 'reset HEAD --'
+	p = push
+	last = 'log -1 HEAD'
+	cl = 'clone'
+
+# signing stuff, please dont touch
+
+[gpg]
+	format = ssh
+	
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+# remote url aliases so i dont get carpal tunnel from writing out git@git.sr.ht:~la/fuck-this
+
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+	
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+	insteadOF = gh:
+	
+[url "git@git.sr.ht:"]
+	insteadOf = git@sr.ht:
+	insteadOf = sr.ht:
+	
+[url "ssh://aur@aur.archlinux.org"]
+	insteadOf = aur
+
+[url "ssh://forgejo@git.laker.tech:1337"]
+	insteadOf = git.laker.tech
+
+[include]
+	path = ~/.gitconfig.local
